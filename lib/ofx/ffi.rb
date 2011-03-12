@@ -1,3 +1,5 @@
+require 'ofx/ffi/valid_access'
+
 module OFX
   module FFI
     extend ::FFI::Library
@@ -12,6 +14,8 @@ module OFX
     AccountType = enum :checking, :savings, :money_market, :credit_line,
                        :cma, :credit_card, :investment
     class AccountData < ::FFI::Struct
+      include ValidAccess
+
       layout :account_id, [:char, 57],
         :account_name, [:char, 255],
         :account_id_valid, :int,
@@ -20,6 +24,7 @@ module OFX
         :currency, [:char, 4],
         :currency_valid, :int,
         :account_number, [:char, 23],
+        :account_number_valid, :int,
         :bank_id, [:char, 10],
         :bank_id_valid, :int,
         :broker_id, [:char, 23],
@@ -37,6 +42,8 @@ module OFX
                            :direct_deposit, :direct_debit, :repeat_payment,
                            :other
     class TransactionData < ::FFI::Struct
+      include ValidAccess
+
       layout :account_id, [:char, 57],
         :account_ptr, :pointer,
         :account_id_valid, :int,

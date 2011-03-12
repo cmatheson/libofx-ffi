@@ -3,4 +3,5 @@
 require 'ffi'
 require 'ofx'
 
-OFX.parse "secret.ofx"
+require 'ap'
+ap OFX.parse "secret.ofx"
