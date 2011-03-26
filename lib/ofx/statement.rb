@@ -16,7 +16,7 @@ module OFX
 
     def each
       @accounts.each do |number, account|
-        yield number, account
+        yield account
       end
     end
   end
