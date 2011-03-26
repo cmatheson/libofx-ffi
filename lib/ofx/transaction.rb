@@ -11,7 +11,6 @@ module OFX
       @name = ffi_transaction.name.to_s
       @type = ffi_transaction.transaction_type
       @amount = ffi_transaction.amount
-      @transactions = []
     end
   end
 end

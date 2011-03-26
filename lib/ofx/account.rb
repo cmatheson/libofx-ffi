@@ -4,7 +4,7 @@ module OFX
     attr_accessor :transactions
 
     def initialize(ffi_account)
-      @number = ffi_account.account_number
+      @number = ffi_account.account_number.to_s
       @type   = ffi_account.account_type
 
       @transactions = []

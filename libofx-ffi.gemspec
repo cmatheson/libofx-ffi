@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "libofx-ffi"
-  s.version       = "0.1.2"
+  s.version       = "0.1.3"
   s.author        = "Cameron Matheson"
   s.email         = "cameron.matheson@gmail.com"
   s.homepage      = "http://github.com/cmatheson/libofx-ffi"
