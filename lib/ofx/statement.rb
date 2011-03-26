@@ -13,5 +13,11 @@ module OFX
     def []=(key, val)
       @accounts[key.to_s] = val
     end
+
+    def each
+      @accounts.each do |number, account|
+        yield number, account
+      end
+    end
   end
 end
